@@ -74,3 +74,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /Unity/Library/PackageCache/com.unity.ide.visualstudio@2.0.12/Editor/Messaging/Serializer.cs.meta
+/Unity/Library
+/Unity/Logs
+/Unity/Temp
