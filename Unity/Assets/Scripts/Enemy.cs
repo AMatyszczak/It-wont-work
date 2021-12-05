@@ -1,12 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 
 public class Enemy: MonoBehaviour
 {
-
     public Slider slider;
 
     private int Health {
