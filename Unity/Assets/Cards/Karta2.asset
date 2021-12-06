@@ -16,3 +16,6 @@ MonoBehaviour:
   cost: 0
   level: 1
   isDefaultCard: 0
+  isPlayable: 1
+  cardSprite: {fileID: 21300000, guid: 2c4b6fcd341352b46aff8638f5d4f997, type: 3}
+  description: NULL

@@ -14,4 +14,5 @@ public class Card : ScriptableObject
     public bool isDefaultCard = false;
     public bool isPlayable = true;
     public Sprite cardSprite = null;
+    public string description = "NULL";
 }
