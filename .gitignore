@@ -18,7 +18,7 @@
 /Unity/[Rr]ecordings/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
-!/Unity/[Aa]ssets/**/*.meta
+/Unity/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /Unity/[Aa]ssets/AssetStoreTools*
@@ -77,3 +77,4 @@ ExportedObj/
 /Unity/Unity/Library
 /Unity/Unity/Logs
 /Unity/Unity/Temp
+/Unity/.vsconfig
