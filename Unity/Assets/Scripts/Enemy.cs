@@ -26,6 +26,6 @@ public class Enemy: MonoBehaviour
 
     public void HandleTurn()
     {
-
+        this.Health--;
     }
 }
