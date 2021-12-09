@@ -1,0 +1,1 @@
+public enum TurnState { START, PLAYERTURN, ENEMYTURN, WON, LOST }

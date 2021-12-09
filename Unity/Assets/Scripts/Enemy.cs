@@ -23,4 +23,9 @@ public class Enemy: MonoBehaviour
         this.Health = health;
         this.Damage = damage;
     }
+
+    public void HandleTurn()
+    {
+        this.Health--;
+    }
 }

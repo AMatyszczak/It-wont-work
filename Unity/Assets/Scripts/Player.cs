@@ -22,4 +22,9 @@ public class Player: MonoBehaviour {
         this.Health = health;
         this.Resources = resources;
     }
+
+    public void HandleTurn()
+    {
+        this.Resources += 1;
+    }
 }
