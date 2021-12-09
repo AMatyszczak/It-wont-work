@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//Klasa odpowiedzialna za nasz¹ rêke(deck moze byc tylko 1 w trakcie rozgrywki mo¿na dobieraæ u¿ywaæ odrzucaæ karty oraz je modyfikowaæ.
-//ma przechowywac ich stan ,ma maksymalny oraz minimalny rozmiar(0).
-//ma przechowywaæ miejsce gdzie wyœwietlaj¹ siê karty w zale¿noœci od iloœci kart w rêce
 public class Hand : MonoBehaviour
 {
-
-    //Instancja dodana by mozna ³atwo z ka¿dego miejsca rozgrywki odwo³aæ siê do reki, Ogranicza tez tworzenie wiekszej ilosc r¹k co by³oby nieporz¹dane.
     public static Hand instance;
     void Awake()
     {
@@ -27,8 +21,6 @@ public class Hand : MonoBehaviour
 
     //maksymalny rozmiar rêki
     public int maxSize = 8;
-    //minimalny rozmiar decky
-    public int minSize = 0;
 
     //lista przechowuj¹ca wszystkie karty w rêce(karta jest obiektem Card z ewentualnymi parametrami)
     public List<Card> cards = new List<Card>();
@@ -56,9 +48,9 @@ public class Hand : MonoBehaviour
     //
     public void Remove(Card card)
     {
-        if (cards.Count <= minSize)
+        if (cards.Count <= 0)
         {
-            Debug.LogWarning("Przekroczono minimalny rozmiar reki nie ma czego usuwaæ ?.");
+            Debug.LogWarning("Brak kart do usuniecia");
             return;
         }
         cards.Remove(card);
