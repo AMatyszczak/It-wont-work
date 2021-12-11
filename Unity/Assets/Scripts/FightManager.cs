@@ -2,25 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FightManager : MonoBehaviour
-{
+public class FightManager: MonoBehaviour
+{ 
+    private TurnState currentTurnState;
+    private readonly List<Enemy> enemies;
+    private readonly Player player;
     private Stack stack;
-    private Player player;
 
-    public FightManager(Stack stack, Player player) 
+    public FightManager(Player player, List<Enemy> enemies, Stack stack)
     {
+        currentTurnState = TurnState.START;
+        this.enemies = enemies;
         this.stack = stack;
-        this.player = player;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        
+        StartPlayerTurn();
+    }
+
+    private void StartPlayerTurn()
+    {
+        this.currentTurnState = TurnState.PLAYERTURN;
+        HandlePlayerTurn();
+    }
+
+    private void StartEnemyTurn()
+    {
+        this.currentTurnState = TurnState.ENEMYTURN;
+        HandleEnemyTurn();
+    }
+
+    private void HandleEnemyTurn()
+    {
+        FulfillEnemiesActions();
+        StartPlayerTurn();
+    }
+
+    private void HandlePlayerTurn()
+    {
+        player.HandleTurn();
+        StartEnemyTurn();
+    }
+
+    private void FulfillEnemiesActions()
+    {
+        enemies.ForEach(enemy => { enemy.HandleTurn(); });
     }
 }

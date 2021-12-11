@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player: MonoBehaviour {
 
+public class Enemy: MonoBehaviour
+{
     public Slider slider;
+
     private int Health {
         get => Health;
         set {
@@ -11,20 +13,19 @@ public class Player: MonoBehaviour {
             slider.value = value;
         }
     }
-
-    private int Resources {
-        get => Resources;
-        set => Resources = value;
+    private int Damage {
+        get => Damage;
+        set => Damage = value;
     }
 
-    public Player(int health, int resources)
+    public Enemy(int health, int damage)
     {
         this.Health = health;
-        this.Resources = resources;
+        this.Damage = damage;
     }
 
     public void HandleTurn()
     {
-        this.Resources += 1;
+        this.Health--;
     }
 }
