@@ -1,65 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-
-//Klasa odpowiedzialna za nasz deck (deck moze byc tylko 1 w trakcie rozgrywki mozna  do niego dodawac/  uwuwac z niego karty / karty w nim moga byc zmodyfikowane
-//ma przechowywac ich stan ma maksymalny oraz minimalny rozmiar.
 public class Deck : MonoBehaviour
 {
 
-    //Instancja dodana by mozna ³atwo z ka¿dego miejsca rozgrywki odwo³aæ siê do decku, Ogranicza tez tworzenie wiekszej ilosc deckow co by³oby nieporz¹dane.
-    public static Deck instance;
-    void Awake()
+    public List<Card> deck = new List <Card>();
+ 
+
+    public int cardID;
+    public int dataBaseID;
+    public string cardName;
+    public int cost;
+    public int level;
+    public bool isPlayable;
+    public string description;
+    public Sprite cardSprite;
+
+
+    public Text nameText;
+    public Text costText;
+    public Text descriptionText;
+
+
+    public Sprite thisSprite;
+    public Image thisImage;
+
+
+    void Start()
     {
-        if (instance != null)
-        {
-            Debug.LogWarning("Wykryto wiêcen ni¿ 1 DECK w grze.");
-            return;
-        }
-        instance = this;
+        deck[0] = CardDataBase.cardList[dataBaseID];
+        cardID = deck[0].id;
+        cardName = deck[0].cardName;
+        cost = deck[0].cost;
+        level = deck[0].level;
+        isPlayable = deck[0].isPlayable;
+        description = deck[0].description;
+        cardSprite = deck[0].cardSprite;
+        nameText.text = "" + cardName;
+        costText.text = "" + cost;
+        descriptionText.text = "" + description;
     }
 
-    //Funkcja dodana by ³atwiej manipulowaæ deckiem, gdy dodajemy, usuwamy, ulepszamy karte mo¿emy j¹ u¿yæ by zmieniæ coœ w decku.
-    public delegate void OnDeckChanged();
-    public OnDeckChanged onDeckChangedCallback;
-
-    //maksymalny rozmiar decku
-    public int maxSize = 15;
-    //minimalny rozmiar decky
-    public int minSize = 5;
-
-    //lista przechowuj¹ca wszystkie karty w decku(karta jest obiektem Card z ewentualnymi parametrami)
-    public List<Card> cards = new List<Card>();
-
-
-    //Funkcja do dodawania kart z decky z eventow / po walce / sklep etc.
-    public void Add(Card card)
+    
+    void Update()
     {
-        if (!card.isDefaultCard)
-        {
-            if (cards.Count >= maxSize)
-            {
-                Debug.LogWarning("Przekroczono maxymalny rozmiar decku nie mozna dodac karty.");
-                return;
-            }
-            cards.Add(card);
-            if (onDeckChangedCallback != null)
-            onDeckChangedCallback.Invoke();
-            
-        }
+
     }
-
-
-    //Funkcje do usuwania kart z decku z evenetow / sklep etc.
-    public void Remove(Card card)
-    {
-        if (cards.Count <= minSize)
-        {
-            Debug.LogWarning("Przekroczono minimalny rozmiar decku nie mozna usunac karty.");
-            return;
-        }
-        cards.Remove(card);
-    }
-
 }
