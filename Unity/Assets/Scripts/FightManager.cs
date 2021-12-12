@@ -1,22 +1,24 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FightManager: MonoBehaviour
 { 
-    private TurnState currentTurnState;
-    private readonly List<Enemy> enemies;
-    private readonly Player player;
+    public TurnState currentTurnState;
+    public List<Enemy> enemies;
+    public Player player;
+    public Stack stack;
 
-    public FightManager(Player player, List<Enemy> enemies)
+    public FightManager(Player player, List<Enemy> enemies, Stack stack)
     {
         currentTurnState = TurnState.START;
         this.enemies = enemies;
-        this.player = player;
+        this.stack = stack;
     }
 
     public void Start()
     {
-        StartPlayerTurn();
+        //StartPlayerTurn();
     }
 
     private void StartPlayerTurn()
