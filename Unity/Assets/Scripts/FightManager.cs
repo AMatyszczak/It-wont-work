@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FightManager: MonoBehaviour
 { 
-    private TurnState currentTurnState;
-    private readonly List<Enemy> enemies;
-    private readonly Player player;
-    private Stack stack;
+    public TurnState currentTurnState;
+    public List<Enemy> enemies;
+    public Player player;
+    public Stack stack;
 
     public FightManager(Player player, List<Enemy> enemies, Stack stack)
     {
@@ -18,7 +18,7 @@ public class FightManager: MonoBehaviour
 
     public void Start()
     {
-        StartPlayerTurn();
+        //StartPlayerTurn();
     }
 
     private void StartPlayerTurn()
