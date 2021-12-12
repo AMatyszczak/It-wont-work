@@ -25,10 +25,6 @@ public class Deck : MonoBehaviour
     public Text descriptionText;
 
 
-    public Sprite thisSprite;
-    public Image thisImage;
-
-
     void Start()
     {
         deck[0] = CardDataBase.cardList[dataBaseID];

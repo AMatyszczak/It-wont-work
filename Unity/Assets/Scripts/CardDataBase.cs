@@ -7,7 +7,7 @@ public class CardDataBase : MonoBehaviour
         
 
     public static List<Card> cardList =new List<Card>();
-    // Start is called before the first frame update
+
     void Awake()
     {
         cardList.Add(new Card(0,"Slash",2,1,true,"opis1",Resources.Load<Sprite>("card_img/karta1")));

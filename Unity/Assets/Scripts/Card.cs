@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class Card 
 {
+
+
     public int id;
     public string cardName;
     public int cost;
@@ -19,8 +21,10 @@ public class Card
     public Sprite cardSprite;
 
 
+
     public Card()
     {
+
     }
 
     public Card(int id, string cardName, int cost, int level, bool isPlayable, string description , Sprite cardSprite)
