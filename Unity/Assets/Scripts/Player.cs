@@ -1,16 +1,31 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Player: MonoBehaviour {
 
-    private int health {
-        get => health;
-        set => health = value;
+    public Slider slider;
+
+    private int _health = 100;
+    public int Health
+    {
+        get => _health;
+        set
+        {
+            _health = value;
+            slider.value = value;
+        }
     }
 
-    private int resources {
-        get => resources;
-        set => resources = value;
+    private int _resources = 1;
+    private int Resources
+    {
+        get => _resources;
+        set => _resources = value;
+    }
+
+
+    public void HandleTurn()
+    {
+        this.Resources += 1;
     }
 }
