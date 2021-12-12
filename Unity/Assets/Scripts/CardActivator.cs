@@ -7,11 +7,10 @@ public class CardActivator : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("ZAGRYWANIE");
         if (eventData.pointerDrag != null)
         {
             Debug.Log(eventData.pointerDrag.GetComponent<Object>());
         }
-        }
+    }
 }
     
