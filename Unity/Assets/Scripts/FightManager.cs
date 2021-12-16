@@ -5,48 +5,36 @@ using UnityEngine.UI;
 
 public class FightManager: MonoBehaviour
 { 
-    public TurnState currentTurnState;
-    public List<Enemy> enemies;
-    public Player player;
-    public Stack stack;
-    public Button endTurnButton;
+    private TurnState currentTurnState;
+    private List<EnemyDisplay> enemies;
+    private PlayerDisplay player;
+    private Stack stack;
+    private Button endTurnButton;
+    
 
-    public FightManager(Player player, List<Enemy> enemies, Stack stack)
+    public void Setup(PlayerDisplay player, List<EnemyDisplay> enemies, Stack stack, Button endTurnButton)
     {
         currentTurnState = TurnState.START;
         this.enemies = enemies;
         this.stack = stack;
-    }
-
-    public void Start()
-    {
+        this.player = player;
+        this.endTurnButton = endTurnButton;
         SetUpEndTurnButton();
-
-        StartPlayerTurn();
     }
 
-    private void StartPlayerTurn()
+    public void HandleTurnChange(TurnState turnState)
     {
-        this.currentTurnState = TurnState.PLAYERTURN;
-        HandlePlayerTurn();
-    }
-
-    private void StartEnemyTurn()
-    {
-        this.currentTurnState = TurnState.ENEMYTURN;
-        HandleEnemyTurn();
-    }
-
-    private void HandleEnemyTurn()
-    {
-        FulfillEnemiesActions();
-        StartPlayerTurn();
-    }
-
-    private void HandlePlayerTurn()
-    {
-        player.HandleTurn();
-        
+        this.currentTurnState = turnState;
+        switch (turnState)
+        {
+            case TurnState.PLAYERTURN:
+                player.HandleTurn();
+                break;
+            case TurnState.ENEMYTURN:
+                FulfillEnemiesActions();
+                HandleTurnChange(TurnState.PLAYERTURN);
+                break;
+        }
     }
 
     private void FulfillEnemiesActions()
@@ -56,6 +44,8 @@ public class FightManager: MonoBehaviour
 
     private void SetUpEndTurnButton()
     {
-        endTurnButton.onClick.AddListener(StartEnemyTurn);
+        endTurnButton.onClick.AddListener(delegate { 
+            HandleTurnChange(TurnState.ENEMYTURN); 
+        });
     }
 }

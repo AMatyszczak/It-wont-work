@@ -69,9 +69,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787339ae4258d274b847f8bad61cc407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTurnState: 0
-  enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  player: {fileID: 0}
-  endTurnButton: {fileID: 0}
+  endTurnButton: {fileID: 6363050452734396888, guid: 537618453c740fb4095ed7619e42ae82, type: 3}

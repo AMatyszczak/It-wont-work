@@ -1,31 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player: MonoBehaviour {
+[CreateAssetMenu(fileName = "New Player", menuName = "Player")]
 
-    public Slider slider;
+public class Player: ScriptableObject, ISerializationCallbackReceiver
+{
 
-    private int _health = 100;
-    public int Health
+    public int InitialHealth;
+    [NonSerialized]
+    public int RuntimeHealth;
+    public int Resources;
+
+    public void OnAfterDeserialize()
     {
-        get => _health;
-        set
-        {
-            _health = value;
-            slider.value = value;
-        }
+        RuntimeHealth = InitialHealth;
     }
 
-    private int _resources = 1;
-    private int Resources
-    {
-        get => _resources;
-        set => _resources = value;
-    }
-
-
-    public void HandleTurn()
-    {
-        this.Resources += 1;
-    }
+    public void OnBeforeSerialize() { }
 }

@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1914299352162684407}
-  - component: {fileID: 1914299352162684406}
+  - component: {fileID: 8287459038710226057}
   m_Layer: 0
   m_Name: Enemy Ranged
   m_TagString: Untagged
@@ -278,7 +278,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1914299352162684406
+--- !u!114 &8287459038710226057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,10 +287,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914299352162684404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 435c08bc9a3c8ca45ae5609e395d1fa1, type: 3}
+  m_Script: {fileID: 11500000, guid: 35f3ec2850c915f4aa76c04734de46cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1914299351225998416}
+  enemy: {fileID: 11400000, guid: f97a426e76a49ef419b1162b558d63d5, type: 2}
+  healthSlider: {fileID: 1914299351225998416}
 --- !u!1 &1914299352604189784
 GameObject:
   m_ObjectHideFlags: 0
