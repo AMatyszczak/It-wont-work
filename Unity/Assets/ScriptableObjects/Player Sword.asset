@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe58e209e5fe7e42ba74e66a1d8fb90, type: 3}
   m_Name: Player Sword
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 100
-  resources: 1
+  InitialHealth: 100
+  Resources: 1
