@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class FightManager: MonoBehaviour
 { 
     private TurnState currentTurnState;
-    private List<EnemyDisplay> enemies;
-    private PlayerDisplay player;
+    private List<EnemyTurnHandler> enemies;
+    private PlayerTurnHandler player;
     private Stack stack;
     private Button endTurnButton;
     
 
-    public void Setup(PlayerDisplay player, List<EnemyDisplay> enemies, Stack stack, Button endTurnButton)
+    public void Setup(PlayerTurnHandler player, List<EnemyTurnHandler> enemies, Stack stack, Button endTurnButton)
     {
         currentTurnState = TurnState.START;
         this.enemies = enemies;

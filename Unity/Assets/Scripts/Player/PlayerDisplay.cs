@@ -16,9 +16,4 @@ public class PlayerDisplay : MonoBehaviour
     {
         healthSlider.value = player.RuntimeHealth;
     }
-
-    public void HandleTurn()
-    {
-        player.RuntimeHealth -= 10;
-    }
 }

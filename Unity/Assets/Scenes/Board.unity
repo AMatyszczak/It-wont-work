@@ -223,9 +223,21 @@ PrefabInstance:
       value: FightSettuper
       objectReference: {fileID: 0}
     - target: {fileID: 3639854120649466680, guid: e16681c64ef57be47aca55a80a4abe7e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: -8434828926307976480, guid: 4255f186462665f408efdc37bb2b4f39, type: 3}
+    - target: {fileID: 3639854120649466680, guid: e16681c64ef57be47aca55a80a4abe7e, type: 3}
       propertyPath: endTurnButton
       value: 
       objectReference: {fileID: 1139045741}
+    - target: {fileID: 3639854120649466680, guid: e16681c64ef57be47aca55a80a4abe7e, type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 3189387752453193200, guid: 53747a1c4edd058438de106dc6e0d4f1, type: 3}
+    - target: {fileID: 3639854120649466680, guid: e16681c64ef57be47aca55a80a4abe7e, type: 3}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 6213674837894375708, guid: d203b4b8d5987584491a3e855867c76e, type: 3}
     - target: {fileID: 3639854120649466681, guid: e16681c64ef57be47aca55a80a4abe7e, type: 3}
       propertyPath: m_RootOrder
       value: 6

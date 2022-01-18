@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914299352162684407}
   - component: {fileID: 8287459038710226057}
+  - component: {fileID: 6213674837894375708}
   m_Layer: 0
   m_Name: Enemy Ranged
   m_TagString: Untagged
@@ -292,6 +293,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: f97a426e76a49ef419b1162b558d63d5, type: 2}
   healthSlider: {fileID: 1914299351225998416}
+--- !u!114 &6213674837894375708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914299352162684404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124674f5bb959404da2f7aacf74d17a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: f97a426e76a49ef419b1162b558d63d5, type: 2}
 --- !u!1 &1914299352604189784
 GameObject:
   m_ObjectHideFlags: 0
