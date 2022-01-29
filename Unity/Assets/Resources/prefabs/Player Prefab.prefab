@@ -399,7 +399,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3956685922073366691}
-  - component: {fileID: 3956685920748867751}
+  - component: {fileID: 7589756163845970477}
+  - component: {fileID: -8434828926307976480}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Untagged
@@ -425,7 +426,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3956685920748867751
+--- !u!114 &7589756163845970477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,10 +435,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3956685922073366690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fe58e209e5fe7e42ba74e66a1d8fb90, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c1c97394a83ac84da0e3fb755496b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 3956685921150699909}
+  player: {fileID: 11400000, guid: 92e5f2b4b86bba1498457f75c7d4cc3d, type: 2}
+  healthSlider: {fileID: 3956685921150699909}
+--- !u!114 &-8434828926307976480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956685922073366690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d91f5bb86958b4dafc5f561487800d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 92e5f2b4b86bba1498457f75c7d4cc3d, type: 2}
 --- !u!1 &3956685922146576092
 GameObject:
   m_ObjectHideFlags: 0
