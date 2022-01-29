@@ -19,7 +19,7 @@ public class FightManager: MonoBehaviour
         this.stack = stack;
         this.player = player;
         this.endTurnButton = endTurnButton;
-        SetUpEndTurnButton();
+        ListenOnEndTurnButtonClick();
     }
 
     public void HandleTurnChange(TurnState turnState)
@@ -42,7 +42,7 @@ public class FightManager: MonoBehaviour
         enemies.ForEach(enemy => { enemy.HandleTurn(); });
     }
 
-    private void SetUpEndTurnButton()
+    private void ListenOnEndTurnButtonClick()
     {
         endTurnButton.onClick.AddListener(delegate { 
             HandleTurnChange(TurnState.ENEMYTURN); 

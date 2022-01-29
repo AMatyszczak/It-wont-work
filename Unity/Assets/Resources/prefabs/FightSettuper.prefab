@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f954eee8d4c9e1d499d9bd318bd55d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fightManager: {fileID: 5144273712732330107, guid: 118eb564c8108f34eb4d79d3dfeea2ab, type: 3}
-  player: {fileID: 7589756163845970477, guid: 4255f186462665f408efdc37bb2b4f39, type: 3}
+  fightManager: {fileID: 8070438559269939627, guid: 118eb564c8108f34eb4d79d3dfeea2ab, type: 3}
+  player: {fileID: -8434828926307976480, guid: 4255f186462665f408efdc37bb2b4f39, type: 3}
   enemies:
-  - {fileID: 1598334806421215847, guid: 53747a1c4edd058438de106dc6e0d4f1, type: 3}
-  - {fileID: 8287459038710226057, guid: d203b4b8d5987584491a3e855867c76e, type: 3}
+  - {fileID: 3189387752453193200, guid: 53747a1c4edd058438de106dc6e0d4f1, type: 3}
+  - {fileID: 6213674837894375708, guid: d203b4b8d5987584491a3e855867c76e, type: 3}
   endTurnButton: {fileID: 6363050452734396888, guid: 537618453c740fb4095ed7619e42ae82, type: 3}

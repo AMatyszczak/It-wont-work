@@ -14,14 +14,15 @@ public class FightSettuper : MonoBehaviour
 
     public void Start()
     {
-        Setup();
-    }
-
-    private void Setup()
-    {
+        SetupEndTurnButton();
         SetupPlayer();
         SetupEnemies();
         SetupFightManager();
+    }
+
+    private void SetupEndTurnButton()
+    {
+        endTurnButton = GameObject.FindGameObjectWithTag("EndTurnButton").GetComponent<Button>();
     }
 
     private void SetupPlayer()
@@ -39,7 +40,13 @@ public class FightSettuper : MonoBehaviour
 
     private void SetupFightManager()
     {
+        InstantiateFightManager();
         fightManager.Setup(player, enemies, stack, endTurnButton);
+    }
+
+    private void InstantiateFightManager()
+    {
+        Instantiate(fightManager, Vector3.zero, Quaternion.identity);
     }
 
     private Vector3 CalculatePlayerSetupPosition()
