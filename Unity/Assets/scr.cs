@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FightManager: MonoBehaviour
 { 
@@ -8,6 +9,7 @@ public class FightManager: MonoBehaviour
     public List<Enemy> enemies;
     public Player player;
     public Stack stack;
+    public Button endTurnButton;
 
     public FightManager(Player player, List<Enemy> enemies, Stack stack)
     {
@@ -18,7 +20,9 @@ public class FightManager: MonoBehaviour
 
     public void Start()
     {
-        //StartPlayerTurn();
+        SetUpEndTurnButton();
+
+        StartPlayerTurn();
     }
 
     private void StartPlayerTurn()
@@ -42,11 +46,16 @@ public class FightManager: MonoBehaviour
     private void HandlePlayerTurn()
     {
         player.HandleTurn();
-        StartEnemyTurn();
+        
     }
 
     private void FulfillEnemiesActions()
     {
         enemies.ForEach(enemy => { enemy.HandleTurn(); });
+    }
+
+    private void SetUpEndTurnButton()
+    {
+        endTurnButton.onClick.AddListener(StartEnemyTurn);
     }
 }
