@@ -1,18 +1,42 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+[System.Serializable]
 
 
-//Umozliwia nam szybkie dodawania obiektow Kart przez PPM na Projekcie
-[CreateAssetMenu(fileName ="New Card",menuName ="Card")]
 
-//Obiekt Karty posiada wspolna ceche wszytkich kart
-//Nazwa , cena , poziom karty , czy Bazowa, czy zagrywalna.
-public class Card : ScriptableObject
+
+
+public class Card 
 {
-    public string cardName = "CARD";
-    public int cost = 0;
-    public int level = 1;
-    public bool isDefaultCard = false;
-    public bool isPlayable = true;
-    public Sprite cardSprite = null;
-    public string description = "NULL";
+
+
+    public int id;
+    public string cardName;
+    public int cost;
+    public int level;
+    public bool isPlayable;
+    public string description;
+    public Sprite cardSprite;
+
+
+
+    public Card()
+    {
+
+    }
+
+    public Card(int id, string cardName, int cost, int level, bool isPlayable, string description , Sprite cardSprite)
+    {
+        this.id = id;
+        this.cardName = cardName;
+        this.level = level;
+        this.isPlayable = isPlayable;
+        this.description = description;
+        this.cardSprite = cardSprite;
+
+    }
+
+
 }
